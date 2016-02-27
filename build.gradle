@@ -1,0 +1,30 @@
+import groovy.sql.Sql
+import java.util.Properties
+import java.io.InputStream
+import java.util.*
+apply plugin: 'java'
+
+defaultTasks 'clean', 'init'
+
+buildscript {
+	repositories {
+		mavenCentral()
+		mavenLocal()
+		flatDir name: 'localRepository', dirs: 'lib'
+	}
+
+	dependencies {
+
+		classpath "org.postgresql:postgresql:9.2-1002-jdbc4"
+	}
+}
+
+def $environment
+
+//read in local properties file.
+ext.conf = new ConfigSlurper("$environment").parse(new File(localProperties).toURL())
+ext.db = conf.db
+
+//read in global properties file.
+ext.conf = new ConfigSlurper().parse(new File(globalProperties).toURL());
+ext.build = conf.build;

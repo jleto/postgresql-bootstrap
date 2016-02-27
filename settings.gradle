@@ -1,0 +1,5 @@
+println "Starting sys project."
+include './sys', 'db/common', 'db/etl', 'db/opiniator'
+println "Starting common project."
+//'db/common', 'db/etl', 'db/opiniator'
+//include 'db/opiniator_insight'

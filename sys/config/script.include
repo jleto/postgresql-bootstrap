@@ -1,0 +1,8 @@
+﻿\i @build_target_dir@/ddl/disconnect.sql
+\i @build_target_dir@/ddl/disallowconn.sql
+\i @build_target_dir@/ddl/drop.sql
+\i @build_target_dir@/ddl/create.sql
+\i @build_target_dir@/ddl/allowconn.sql
+\i @build_target_dir@/ddl/sys.sql
+\i @build_target_dir@/ddl/version.sql
+\i @build_target_dir@/ddl/origin.sql

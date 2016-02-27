@@ -1,0 +1,2 @@
+﻿\i @build_target_dir@/ddl/utility.sql
+\i @build_target_dir@/function/utility_function.sql

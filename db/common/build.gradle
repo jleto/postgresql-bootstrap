@@ -1,0 +1,75 @@
+import org.apache.tools.ant.filters.*
+
+def props = new Properties()
+file("config/common.properties").withInputStream { 
+    stream -> props.load(stream) 
+	} 
+
+def targetDir = new File(props.getProperty("targetDir"))
+def targetDirPath = props.getProperty("targetDir")
+def seedDirPath = props.getProperty("seedDir")
+
+task clean() {
+		delete targetDirPath
+}
+
+task initScript (type: Copy, dependsOn:clean) {
+
+	//read sql scripts and replace tokens
+	from ('./script') {
+		include '**/*.sql'
+		filter(ReplaceTokens, tokens: [
+									   build_target_dir : targetDirPath
+									  ])
+	}
+	into targetDir
+}
+
+task init(type: Copy, dependsOn:initScript) { 
+	
+	//read the stock scripts and replace the tokens with params set in properties files
+	from ( './config' ) {
+		include 'create.include'
+		include 'update.include'
+		include 'seed.include'
+		include 'script.include'
+		filter(ReplaceTokens, tokens: [
+									   build_target_dir : targetDirPath,
+									   build_seed_dir : seedDirPath
+									  ])
+	}
+	into targetDir
+}
+
+task create(type:Exec, dependsOn: init) {
+
+  workingDir './'
+  //on linux
+  String strExec = "psql -d $db.name -f $targetDirPath/script.include -h $db.server -U postgres -w"
+  commandLine strExec.tokenize()
+
+  //store the output instead of printing to the console:
+  standardOutput = new ByteArrayOutputStream()
+
+  //extension method stopTomcat.output() can be used to obtain the output:
+  ext.output = {
+    return standardOutput.toString()
+  }
+}
+
+task seed(type:Exec, dependsOn: create) {
+ 	workingDir './'
+
+	//construct the psql command
+	String strExec = "psql -d $db.name -f $targetDirPath/seed.include -h $db.server -U postgres -w"
+
+	commandLine strExec.tokenize()
+
+	//store the output instead of printing to the console:
+	standardOutput = new ByteArrayOutputStream()
+
+	//extension method stopTomcat.output() can be used to obtain the output:
+	ext.output = {
+		return standardOutput.toString()
+	}
+}
