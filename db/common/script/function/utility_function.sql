@@ -8,14 +8,14 @@ $$
 	FROM generate_series(0, $2 - $1, $3) i;
 $$ LANGUAGE 'sql' IMMUTABLE;
 
-CREATE OR REPLACE FUNCTION _utility.last_day(date)
+CREATE OR REPLACE FUNCTION _utility.last_day_of_month(date)
 RETURNS date AS
 $$
 	SELECT (date_trunc('MONTH', $1) + INTERVAL '1 MONTH - 1 day')::date;
 $$ LANGUAGE 'sql'
 IMMUTABLE STRICT;
 
-CREATE OR REPLACE FUNCTION _utility.first_day(date)
+CREATE OR REPLACE FUNCTION _utility.first_day_of_month(date)
 RETURNS date AS
 $$
 	SELECT (date_trunc('MONTH', $1))::date;

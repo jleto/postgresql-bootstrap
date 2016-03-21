@@ -1,11 +1,9 @@
 import org.apache.tools.ant.filters.*
 
 def props = new Properties()
-file("config/sys.properties").withInputStream { 
+file("config/etl.properties").withInputStream { 
     stream -> props.load(stream) 
 	} 
-
-println db.name
 
 def targetDir = new File(props.getProperty("targetDir"))
 def targetDirPath = props.getProperty("targetDir")
@@ -21,14 +19,7 @@ task initScript (type: Copy, dependsOn:clean) {
 	from ('./script') {
 		include '**/*.sql'
 		filter(ReplaceTokens, tokens: [
-									   db_instance_name : db.name,
-									   db_user : db.user,
-									   db_tablespace_default : db.tablespace_default,
-									   build_target_dir : targetDirPath,
-									   version_major : props.getProperty("version_major"),
-									   version_minor : props.getProperty("version_minor"),
-									   version_revision : props.getProperty("version_revision"),
-									   version_comment : props.getProperty("version_comment")
+									   build_target_dir : targetDirPath
 									  ])
 	}
 	into targetDir
@@ -43,9 +34,6 @@ task init(type: Copy, dependsOn:initScript) {
 		include 'seed.include'
 		include 'script.include'
 		filter(ReplaceTokens, tokens: [
-									   db_instance_name : db.name,
-									   db_user : db.user,
-									   db_tablespace_default : db.tablespace_default,
 									   build_target_dir : targetDirPath,
 									   build_seed_dir : seedDirPath
 									  ])
@@ -57,7 +45,7 @@ task create(type:Exec, dependsOn: init) {
 
   workingDir './'
   //on linux
-  String strExec = "psql -d postgres -f $targetDirPath/script.include -h $db.server -U postgres -w"
+  String strExec = "psql -d $db.name -f $targetDirPath/script.include -h $db.server -U postgres -w"
   commandLine strExec.tokenize()
 
   //store the output instead of printing to the console:

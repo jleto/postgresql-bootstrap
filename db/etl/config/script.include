@@ -1,0 +1,2 @@
+﻿\i @build_target_dir@/ddl/etl.sql
+\i @build_target_dir@/function/etl_function.sql

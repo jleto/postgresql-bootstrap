@@ -15,7 +15,7 @@ buildscript {
 
 	dependencies {
 
-		classpath "org.postgresql:postgresql:9.2-1002-jdbc4"
+		classpath "org.postgresql:postgresql:9.4-1200-jdbc41"
 	}
 }
 
@@ -28,3 +28,4 @@ ext.db = conf.db
 //read in global properties file.
 ext.conf = new ConfigSlurper().parse(new File(globalProperties).toURL());
 ext.build = conf.build;
+
