@@ -1,16 +1,44 @@
-﻿insert into _etl.provider (key, name) values ('opiniator', 'Opiniator');
+﻿insert into etl.connection_type (key, name)
+values ('database', 'Database');
 
-insert into _etl.product (key, name, provider_id, frequency) values ('opiniator_insights','Opiniator Insights', (select id from _etl.provider where key = 'opiniator'), 'daily');
+insert into etl.connection_type (key, name)
+values ('rest_api', 'REST API');
 
-insert into _etl.batch (key, product_id) values (to_char(current_timestamp - interval '7 day', 'YYYY-MM-DD'), (select id from _etl.product where key = 'opiniator_insights'));
+insert into etl.connection_manager(key, connection_type_id, properties)
+values ('postgres_local',(select id from etl.connection_type where key = 'database'),'{"server":"localhost", "database":"company","user":"postgres", "password":"P23f5h7l", "schema":"etl", "table":"test"}'::json);
 
-insert into _etl.workflow (key, name, active) values ('insight_load', 'Insight Load', true);
+insert into etl.job_package (key, name, batch_interval, batch_format)
+values ('x1', 'X1 Cloud', '1 day', 'YYYYMMDD');
 
-insert into _etl.workflow_job (workflow_id, parent_id, product_id, key, name) values ((select id from _etl.workflow where key = 'insight_load'), null, (select id from _etl.product where key = 'opiniator_insights'), 'insight_load_survey', 'Insight Load - Survey');
-insert into _etl.workflow_job (workflow_id, parent_id, product_id, key, name) values ((select id from _etl.workflow where key = 'insight_load'), (select id from _etl.workflow_job where key = 'insight_load_survey'), (select id from _etl.product where key = 'opiniator_insights'), 'insight_load_supplemental', 'Insight Load - Supplemental');
-insert into _etl.workflow_job (workflow_id, parent_id, product_id, key, name) values ((select id from _etl.workflow where key = 'insight_load'), (select id from _etl.workflow_job where key = 'insight_load_supplemental'), (select id from _etl.product where key = 'opiniator_insights'), 'insight_load_alert', 'Insight Load - Alert');
+insert into etl.job_package (key, name, batch_interval, batch_format)
+values ('cim', 'Comcast Interactive Media', '1 day', 'YYYYMMDD');
+
+insert into etl.job_template (parent_id, key, job_package_id, connection_manager_id)
+values (null, 'x1_cloud_metrics_insight_load',(select id from etl.job_package where key = 'x1'), (select id from etl.connection_manager where key = 'postgres_local')); 
+
+insert into etl.job_template (parent_id, key, job_package_id, connection_manager_id)
+values ((select id from etl.job_template where key = 'x1_cloud_metrics_insight_load'), 'x1_cloud_metrics_staging1_load',(select id from etl.job_package where key = 'x1'), (select id from etl.connection_manager where key = 'postgres_local')); 
+
+insert into etl.job_template (parent_id, key, job_package_id, connection_manager_id)
+values ((select id from etl.job_template where key = 'x1_cloud_metrics_insight_load'), 'x1_cloud_metrics_staging2_load',(select id from etl.job_package where key = 'x1'), (select id from etl.connection_manager where key = 'postgres_local')); 
+
+insert into etl.job_template (parent_id, key, job_package_id, connection_manager_id)
+values ((select id from etl.job_template where key = 'x1_cloud_metrics_insight_load'), 'x1_cloud_metrics_staging3_load',(select id from etl.job_package where key = 'x1'), (select id from etl.connection_manager where key = 'postgres_local')); 
+
+insert into etl.job_template (parent_id, key, job_package_id, connection_manager_id)
+values (null, 'cim_cloud_metrics_insight_load',(select id from etl.job_package where key = 'cim'), (select id from etl.connection_manager where key = 'postgres_local')); 
+
+insert into etl.job_template (parent_id, key, job_package_id, connection_manager_id)
+values ((select id from etl.job_template where key = 'cim_cloud_metrics_insight_load'), 'cim_cloud_metrics_staging1_load', (select id from etl.job_package where key = 'cim'), (select id from etl.connection_manager where key = 'postgres_local'));
+
+insert into etl.job_template (parent_id, key, job_package_id, connection_manager_id)
+values ((select id from etl.job_template where key = 'cim_cloud_metrics_insight_load'), 'cim_cloud_metrics_staging2_load', (select id from etl.job_package where key = 'cim'), (select id from etl.connection_manager where key = 'postgres_local'));
+
+insert into etl.job_template (parent_id, key, job_package_id, connection_manager_id)
+values ((select id from etl.job_template where key = 'cim_cloud_metrics_insight_load'), 'cim_cloud_metrics_staging3_load', (select id from etl.job_package where key = 'cim'), (select id from etl.connection_manager where key = 'postgres_local'));
+
 
 do $$
 begin
- perform _etl.fn_generate_batch();
+ perform etl.fn_generate_batch();
 end $$;

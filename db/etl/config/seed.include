@@ -1,0 +1,2 @@
+\i @build_seed_dir@/etl_seed.sql
+

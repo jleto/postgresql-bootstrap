@@ -1,1 +1,1 @@
-gradle -Penvironment=dev create --debug --stacktrace
+gradle -Penvironment=dev seed --debug --stacktrace

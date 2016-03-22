@@ -9,12 +9,14 @@ def targetDir = new File(props.getProperty("targetDir"))
 def targetDirPath = props.getProperty("targetDir")
 def seedDirPath = props.getProperty("seedDir")
 
+
 task clean() {
 		delete targetDirPath
 }
 
 task initScript (type: Copy, dependsOn:clean) {
 
+    copy {
 	//read sql scripts and replace tokens
 	from ('./script') {
 		include '**/*.sql'
@@ -23,6 +25,13 @@ task initScript (type: Copy, dependsOn:clean) {
 									  ])
 	}
 	into targetDir
+     }
+     copy {
+         from ('./seed') {
+               include '**/*.sql'
+         }
+         into "$targetDir/seed"
+     }
 }
 
 task init(type: Copy, dependsOn:initScript) { 
