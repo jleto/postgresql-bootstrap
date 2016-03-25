@@ -10,7 +10,7 @@ Create the database roles and grant permissions on all tablespaces.
 do $$
 declare
     xTablespace record;
-    strRoleName text = '@db_user@';
+    strRoleName text = '@db_instance_name@';
     strDbName text = '@db_instance_name@';
 begin
     if
@@ -65,7 +65,7 @@ Allow the reader role to connect
 **********************************************************************************************************************************/;
 do $$
 declare
-    strRoleName text = '@db_user@';
+    strRoleName text = '@db_instance_name@';
     strDbName text = '@db_instance_name@';
 begin
     execute 'grant connect on database ' || strDbName || ' to ' || strRoleName || '_reader';

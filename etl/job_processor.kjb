@@ -8,23 +8,23 @@
   <created_user>-</created_user>
   <created_date>2014&#x2f;07&#x2f;01 03&#x3a;41&#x3a;15.955</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2014&#x2f;08&#x2f;17 19&#x3a;35&#x3a;48.035</modified_date>
+  <modified_date>2016&#x2f;03&#x2f;25 16&#x3a;14&#x3a;39.698</modified_date>
     <parameters>
         <parameter>
             <name>p_config_file</name>
-            <default_value>&#x2f;home&#x2f;jleto&#x2f;dev&#x2f;opiniator&#x2f;database&#x2f;etl&#x2f;config&#x2f;insight.conf</default_value>
+            <default_value>&#x2f;home&#x2f;jleto&#x2f;dev&#x2f;postgresql-bootstrap&#x2f;etl&#x2f;config&#x2f;etl.properties</default_value>
             <description/>
         </parameter>
     </parameters>
   <connection>
-    <name>opiniator_db</name>
-    <server>localhost</server>
+    <name>etl_db</name>
+    <server>&#x24;&#x7b;etl.db.host&#x7d;</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
-    <database>opiniator_dev</database>
+    <database>&#x24;&#x7b;etl.db.name&#x7d;</database>
     <port>5432</port>
-    <username>postgres</username>
-    <password>Encrypted 2be98afc843f79b8a9b50bd64d9a08ae9</password>
+    <username>&#x24;&#x7b;etl.db.user&#x7d;</username>
+    <password>&#x24;&#x7b;etl.db.password&#x7d;</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -79,8 +79,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>65</xloc>
-      <yloc>48</yloc>
+      <xloc>32</xloc>
+      <yloc>32</yloc>
       </entry>
     <entry>
       <name>config_load</name>
@@ -116,44 +116,24 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>65</xloc>
-      <yloc>137</yloc>
-      </entry>
-    <entry>
-      <name>Set Workflow Name</name>
-      <description/>
-      <type>SET_VARIABLES</type>
-      <replacevars>Y</replacevars>
-      <filename/>
-      <file_variable_type>CURRENT_JOB</file_variable_type>
-      <fields>
-        <field>
-          <variable_name>v_workflow_name</variable_name>
-          <variable_value>insight_load</variable_value>
-          <variable_type>CURRENT_JOB</variable_type>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>67</xloc>
-      <yloc>306</yloc>
+      <xloc>128</xloc>
+      <yloc>32</yloc>
       </entry>
     <entry>
       <name>Write To Log</name>
       <description/>
       <type>WRITE_TO_LOG</type>
-      <logmessage>v_workflow_name&#x3a; &#x24;&#x7b;v_workflow_name&#x7d;, opiniator&#x3a; &#x24;&#x7b;opiniator.db.host&#x7d;, workflow host&#x3a; &#x24;&#x7b;workflow.db.host&#x7d;</logmessage>
+      <logmessage>etl&#x3a; &#x24;&#x7b;etl.db.host&#x7d;, etl host&#x3a; &#x24;&#x7b;etl.db.host&#x7d;</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject>job.import variables</logsubject>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>68</xloc>
-      <yloc>408</yloc>
+      <xloc>96</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
-      <name>Set Workflow Db</name>
+      <name>Set ETL Db</name>
       <description/>
       <type>SET_VARIABLES</type>
       <replacevars>Y</replacevars>
@@ -161,39 +141,39 @@
       <file_variable_type>CURRENT_JOB</file_variable_type>
       <fields>
         <field>
-          <variable_name>workflow.db.host</variable_name>
-          <variable_value>&#x24;&#x7b;opiniator.db.host&#x7d;</variable_value>
+          <variable_name>etl.db.host</variable_name>
+          <variable_value>&#x24;&#x7b;etl.db.host&#x7d;</variable_value>
           <variable_type>JVM</variable_type>
         </field>
         <field>
-          <variable_name>workflow.db.name</variable_name>
-          <variable_value>&#x24;&#x7b;opiniator.db.name&#x7d;</variable_value>
+          <variable_name>etl.db.name</variable_name>
+          <variable_value>&#x24;&#x7b;etl.db.name&#x7d;</variable_value>
           <variable_type>JVM</variable_type>
         </field>
         <field>
-          <variable_name>workflow.db.port</variable_name>
-          <variable_value>&#x24;&#x7b;opiniator.db.port&#x7d;</variable_value>
+          <variable_name>etl.db.port</variable_name>
+          <variable_value>&#x24;&#x7b;etl.db.port&#x7d;</variable_value>
           <variable_type>JVM</variable_type>
         </field>
         <field>
-          <variable_name>workflow.db.user</variable_name>
-          <variable_value>&#x24;&#x7b;opiniator.db.user&#x7d;</variable_value>
+          <variable_name>etl.db.user</variable_name>
+          <variable_value>&#x24;&#x7b;etl.db.user&#x7d;</variable_value>
           <variable_type>JVM</variable_type>
         </field>
         <field>
-          <variable_name>workflow.db.password</variable_name>
-          <variable_value>&#x24;&#x7b;opiniator.db.password&#x7d;</variable_value>
+          <variable_name>etl.db.password</variable_name>
+          <variable_value>&#x24;&#x7b;etl.db.password&#x7d;</variable_value>
           <variable_type>JVM</variable_type>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>68</xloc>
-      <yloc>224</yloc>
+      <xloc>32</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
-      <name>workflow_job_next</name>
+      <name>Get Next Job</name>
       <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
@@ -226,8 +206,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>193</xloc>
-      <yloc>137</yloc>
+      <xloc>368</xloc>
+      <yloc>160</yloc>
       </entry>
     <entry>
       <name>Job Ready&#x3f;</name>
@@ -248,8 +228,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>447</xloc>
-      <yloc>139</yloc>
+      <xloc>560</xloc>
+      <yloc>160</yloc>
       </entry>
     <entry>
       <name>No Job Ready</name>
@@ -258,21 +238,21 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>444</xloc>
-      <yloc>54</yloc>
+      <xloc>512</xloc>
+      <yloc>16</yloc>
       </entry>
     <entry>
       <name>Workflow Var</name>
       <description/>
       <type>WRITE_TO_LOG</type>
-      <logmessage>v_workflow_key&#x3a; &#x24;&#x7b;v_workflow_key&#x7d;, v_job_id&#x3a; &#x24;&#x7b;v_job_id&#x7d;, v_job_key&#x3a; &#x24;&#x7b;v_job_key&#x7d;</logmessage>
+      <logmessage>v_workflow_key&#x3a; &#x24;&#x7b;v_workflow_key&#x7d;, v_job_id&#x3a; &#x24;&#x7b;v_job_id&#x7d;, v_job_key&#x3a; &#x24;&#x7b;v_job_key&#x7d;, v_connection_type_key&#x3a; &#x24;&#x7b;v_connection_type_key&#x7d;, v_connection_key&#x3a; &#x24;&#x7b;v_connection_key&#x7d;, v_connection_properties&#x3a;&#x24;&#x7b;v_connection_properties&#x7d;, v_job_properties&#x3a;&#x24;&#x7b;v_job_properties&#x7d;</logmessage>
       <loglevel>Minimal</loglevel>
       <logsubject>Workflow Variables</logsubject>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>328</xloc>
-      <yloc>138</yloc>
+      <xloc>464</xloc>
+      <yloc>160</yloc>
       </entry>
     <entry>
       <name>Status Error</name>
@@ -311,8 +291,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>184</xloc>
-      <yloc>342</yloc>
+      <xloc>368</xloc>
+      <yloc>672</yloc>
       </entry>
     <entry>
       <name>Mail - Failed</name>
@@ -352,8 +332,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>295</xloc>
-      <yloc>487</yloc>
+      <xloc>640</xloc>
+      <yloc>864</yloc>
       </entry>
     <entry>
       <name>Get Normal Log</name>
@@ -363,48 +343,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>295</xloc>
-      <yloc>402</yloc>
-      </entry>
-    <entry>
-      <name>Status Running</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>workflow_job_status_set</transname>
-      <directory>&#x2f;workflow</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>N</pass_all_parameters>
-            <parameter>            <name>p_status</name>
-            <stream_name/>
-            <value>running</value>
-            </parameter>            <parameter>            <name>p_job_id</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;v_job_id&#x7d;</value>
-            </parameter>      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>643</xloc>
-      <yloc>58</yloc>
+      <xloc>512</xloc>
+      <yloc>768</yloc>
       </entry>
     <entry>
       <name>Status Complete</name>
@@ -443,21 +383,21 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>293</xloc>
-      <yloc>249</yloc>
+      <xloc>480</xloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
       <name>Invalid Job</name>
       <description/>
       <type>WRITE_TO_LOG</type>
-      <logmessage>Invalid Job Name &#x28;&#x24;&#x7b;v_job_name&#x7d;&#x29;</logmessage>
+      <logmessage>Invalid Job Name &#x28;&#x24;&#x7b;v_connection_key&#x7d;&#x29;</logmessage>
       <loglevel>Error</loglevel>
       <logsubject>ERROR&#x3a; Invalid Job</logsubject>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>776</xloc>
-      <yloc>546</yloc>
+      <xloc>656</xloc>
+      <yloc>720</yloc>
       </entry>
     <entry>
       <name>Get Job Log</name>
@@ -467,79 +407,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>185</xloc>
-      <yloc>631</yloc>
-      </entry>
-    <entry>
-      <name>insight_load_survey</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname>f_job_name</fieldname>
-      <variablename>&#x24;&#x7b;v_job_key&#x7d;</variablename>
-      <fieldtype>string</fieldtype>
-      <mask/>
-      <comparevalue>insight_load_survey</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>equal</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>769</xloc>
-      <yloc>235</yloc>
-      </entry>
-    <entry>
-      <name>j_insight_load_survey</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
-      <jobname>j_insight_load_survey</jobname>
-      <directory>&#x2f;insight</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <force_separate_logging>N</force_separate_logging>
-      <parameters>        <pass_all_parameters>N</pass_all_parameters>
-            <parameter>            <name>p_wave_id</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;v_workflow_key&#x7d;</value>
-            </parameter>            <parameter>            <name>p_source_dir</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;v_source_dir&#x7d;</value>
-            </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>596</xloc>
-      <yloc>239</yloc>
-      </entry>
-    <entry>
-      <name>Success</name>
-      <description/>
-      <type>SUCCESS</type>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>197</xloc>
-      <yloc>51</yloc>
+      <xloc>768</xloc>
+      <yloc>768</yloc>
       </entry>
     <entry>
       <name>Set Status Running</name>
@@ -558,8 +427,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>546</xloc>
-      <yloc>21</yloc>
+      <xloc>656</xloc>
+      <yloc>80</yloc>
       </entry>
     <entry>
       <name>Set Status Complete</name>
@@ -578,130 +447,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>292</xloc>
-      <yloc>326</yloc>
-      </entry>
-    <entry>
-      <name>j_insight_load_supplemental</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
-      <jobname>j_insight_load_supplemental</jobname>
-      <directory>&#x2f;insight</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <force_separate_logging>N</force_separate_logging>
-      <parameters>        <pass_all_parameters>N</pass_all_parameters>
-            <parameter>            <name>p_wave_id</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;v_workflow_key&#x7d;</value>
-            </parameter>            <parameter>            <name>p_source_dir</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;v_source_dir&#x7d;</value>
-            </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>592</xloc>
-      <yloc>325</yloc>
-      </entry>
-    <entry>
-      <name>insight_load_supplemental</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname>f_job_name</fieldname>
-      <variablename>&#x24;&#x7b;v_job_key&#x7d;</variablename>
-      <fieldtype>string</fieldtype>
-      <mask/>
-      <comparevalue>insight_load_supplemental</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>equal</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>772</xloc>
-      <yloc>326</yloc>
-      </entry>
-    <entry>
-      <name>insight_load_alert</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname>f_job_name</fieldname>
-      <variablename>&#x24;&#x7b;v_job_key&#x7d;</variablename>
-      <fieldtype>string</fieldtype>
-      <mask/>
-      <comparevalue>insight_load_alert</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>equal</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>774</xloc>
-      <yloc>409</yloc>
-      </entry>
-    <entry>
-      <name>j_insight_load_alert</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
-      <jobname>j_insight_load_alert</jobname>
-      <directory>&#x2f;insight</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <force_separate_logging>N</force_separate_logging>
-      <parameters>        <pass_all_parameters>N</pass_all_parameters>
-            <parameter>            <name>p_wave_id</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;v_workflow_key&#x7d;</value>
-            </parameter>            <parameter>            <name>p_source_dir</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;v_source_dir&#x7d;</value>
-            </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>593</xloc>
-      <yloc>402</yloc>
+      <xloc>944</xloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
       <name>Set Status Error</name>
@@ -720,11 +467,11 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>185</xloc>
-      <yloc>412</yloc>
+      <xloc>944</xloc>
+      <yloc>672</yloc>
       </entry>
     <entry>
-      <name>workflow_generate_batches</name>
+      <name>Generate Batches</name>
       <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
@@ -754,8 +501,376 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>65</xloc>
-      <yloc>501</yloc>
+      <xloc>32</xloc>
+      <yloc>160</yloc>
+      </entry>
+    <entry>
+      <name>Next Package</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>workflow_package_next</transname>
+      <directory>&#x2f;workflow</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>160</xloc>
+      <yloc>160</yloc>
+      </entry>
+    <entry>
+      <name>Release Package Lock</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>workflow_package_release_lock</transname>
+      <directory>&#x2f;workflow</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>368</xloc>
+      <yloc>64</yloc>
+      </entry>
+    <entry>
+      <name>Package Ready&#x3f;</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname/>
+      <variablename>&#x24;&#x7b;v_etl_lock&#x7d;</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>-1</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>different</successcondition>
+      <successnumbercondition>different</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>272</xloc>
+      <yloc>160</yloc>
+      </entry>
+    <entry>
+      <name>Package Lock Released&#x3f;</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname/>
+      <variablename>&#x24;&#x7b;v_lock_release_flag&#x7d;</variablename>
+      <fieldtype>boolean</fieldtype>
+      <mask/>
+      <comparevalue>-1</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>different</successcondition>
+      <successnumbercondition>different</successnumbercondition>
+      <successbooleancondition>true</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>240</xloc>
+      <yloc>16</yloc>
+      </entry>
+    <entry>
+      <name>postgres-9.4</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname>f_job_name</fieldname>
+      <variablename>&#x24;&#x7b;v_connection_type_key&#x7d;</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>postgres-9.4</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>656</xloc>
+      <yloc>320</yloc>
+      </entry>
+    <entry>
+      <name>openstack-3.0</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname>f_job_name</fieldname>
+      <variablename>&#x24;&#x7b;v_connection_type_key&#x7d;</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>openstack-3.0</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>656</xloc>
+      <yloc>416</yloc>
+      </entry>
+    <entry>
+      <name>vmware-vsphere-4.0</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname>f_job_name</fieldname>
+      <variablename>&#x24;&#x7b;v_connection_type_key&#x7d;</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>vmware-vsphere-4.0</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>656</xloc>
+      <yloc>512</yloc>
+      </entry>
+    <entry>
+      <name>aws-ec2-2015-10-01</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname>f_job_name</fieldname>
+      <variablename>&#x24;&#x7b;v_connection_type_key&#x7d;</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>aws-ec2-2015-10-01</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>656</xloc>
+      <yloc>592</yloc>
+      </entry>
+    <entry>
+      <name>postgres-9.4 job</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>workflow_postgres-9.4</jobname>
+      <directory>&#x2f;workflow</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>784</xloc>
+      <yloc>320</yloc>
+      </entry>
+    <entry>
+      <name>openstack job</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>workflow_openstack-3.0</jobname>
+      <directory>&#x2f;workflow</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>784</xloc>
+      <yloc>416</yloc>
+      </entry>
+    <entry>
+      <name>vmware-vsphere job</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>workflow_vmware-vsphere-4.0</jobname>
+      <directory>&#x2f;workflow</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>784</xloc>
+      <yloc>512</yloc>
+      </entry>
+    <entry>
+      <name>aws-ec2 job</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>workflow_aws-ec2</jobname>
+      <directory>&#x2f;workflow</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>784</xloc>
+      <yloc>592</yloc>
+      </entry>
+    <entry>
+      <name>Status Running</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>workflow_job_status_set</transname>
+      <directory>&#x2f;workflow</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>N</pass_all_parameters>
+            <parameter>            <name>p_status</name>
+            <stream_name/>
+            <value>running</value>
+            </parameter>            <parameter>            <name>p_job_id</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;v_job_id&#x7d;</value>
+            </parameter>      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>656</xloc>
+      <yloc>160</yloc>
       </entry>
   </entries>
   <hops>
@@ -769,24 +884,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Status Running</from>
-      <to>Get Normal Log</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>workflow_job_next</from>
-      <to>Workflow Var</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Workflow Var</from>
       <to>Job Ready&#x3f;</to>
       <from_nr>0</from_nr>
@@ -797,25 +894,7 @@
     </hop>
     <hop>
       <from>config_load</from>
-      <to>Set Workflow Db</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Set Workflow Db</from>
-      <to>Set Workflow Name</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Set Workflow Name</from>
-      <to>Write To Log</to>
+      <to>Set ETL Db</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -824,7 +903,7 @@
     </hop>
     <hop>
       <from>Status Error</from>
-      <to>workflow_job_next</to>
+      <to>Get Next Job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -836,40 +915,13 @@
       <to>Mail - Failed</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Status Running</from>
-      <to>insight_load_survey</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>insight_load_survey</from>
-      <to>j_insight_load_survey</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>j_insight_load_survey</from>
-      <to>Get Job Log</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>Status Complete</from>
-      <to>workflow_job_next</to>
+      <to>Get Next Job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -881,58 +933,13 @@
       <to>Mail - Failed</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Invalid Job</from>
-      <to>workflow_job_next</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Job Ready&#x3f;</from>
-      <to>No Job Ready</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>config_load</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Job Ready&#x3f;</from>
       <to>Set Status Running</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Set Status Running</from>
-      <to>Status Running</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>j_insight_load_survey</from>
-      <to>Set Status Complete</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -946,69 +953,6 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>insight_load_survey</from>
-      <to>insight_load_supplemental</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>insight_load_supplemental</from>
-      <to>j_insight_load_supplemental</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>j_insight_load_supplemental</from>
-      <to>Set Status Complete</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>j_insight_load_alert</from>
-      <to>Set Status Complete</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>insight_load_supplemental</from>
-      <to>insight_load_alert</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>insight_load_alert</from>
-      <to>j_insight_load_alert</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>insight_load_alert</from>
-      <to>Invalid Job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -1039,26 +983,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>j_insight_load_supplemental</from>
-      <to>Get Job Log</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>j_insight_load_alert</from>
-      <to>Get Job Log</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Write To Log</from>
-      <to>workflow_generate_batches</to>
+      <to>Generate Batches</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1066,8 +992,260 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>workflow_generate_batches</from>
-      <to>workflow_job_next</to>
+      <from>Generate Batches</from>
+      <to>Next Package</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Package Ready&#x3f;</from>
+      <to>Get Next Job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Job Ready&#x3f;</from>
+      <to>Release Package Lock</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Package Lock Released&#x3f;</from>
+      <to>Next Package</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Release Package Lock</from>
+      <to>Package Lock Released&#x3f;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Package Lock Released&#x3f;</from>
+      <to>No Job Ready</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Next Package</from>
+      <to>Package Ready&#x3f;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Get Next Job</from>
+      <to>Workflow Var</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Package Ready&#x3f;</from>
+      <to>No Job Ready</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set ETL Db</from>
+      <to>Write To Log</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>postgres-9.4</from>
+      <to>postgres-9.4 job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>postgres-9.4</from>
+      <to>openstack-3.0</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>openstack-3.0</from>
+      <to>openstack job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>openstack-3.0</from>
+      <to>vmware-vsphere-4.0</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>vmware-vsphere-4.0</from>
+      <to>vmware-vsphere job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>vmware-vsphere-4.0</from>
+      <to>aws-ec2-2015-10-01</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>aws-ec2-2015-10-01</from>
+      <to>aws-ec2 job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>aws-ec2-2015-10-01</from>
+      <to>Invalid Job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>postgres-9.4 job</from>
+      <to>Set Status Complete</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>postgres-9.4 job</from>
+      <to>Set Status Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>openstack job</from>
+      <to>Set Status Complete</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>openstack job</from>
+      <to>Set Status Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>vmware-vsphere job</from>
+      <to>Set Status Complete</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>vmware-vsphere job</from>
+      <to>Set Status Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>aws-ec2 job</from>
+      <to>Set Status Complete</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>aws-ec2 job</from>
+      <to>Set Status Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Invalid Job</from>
+      <to>Get Job Log</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set Status Running</from>
+      <to>Status Running</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Status Running</from>
+      <to>postgres-9.4</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

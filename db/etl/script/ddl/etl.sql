@@ -38,9 +38,11 @@ create table etl.job_package (
 	name text not null,
 	batch_interval text not null,
 	batch_format text not null,
+	etl_lock text null,
 	constraint jobpackage_pk primary key (id),
 	constraint jobpackage_key_unq unique (key),
-	constraint jobpackage_name_unq unique (name)
+	constraint jobpackage_name_unq unique (name),
+	constraint jobpackage_etllock_unq unique (etl_lock)
 );
 
 create table etl.job_template (
@@ -49,6 +51,7 @@ create table etl.job_template (
 	key text not null,
 	job_package_id bigint not null,
 	connection_manager_id bigint,
+	properties json,
 	constraint jobtemplate_pk primary key (id),
 	constraint jobtemplate_jobpackageid_fk foreign key (job_package_id)
 		references etl.job_package (id),
@@ -71,7 +74,7 @@ create table etl.job (
 	parent_id bigint null,
 	batch_id bigint not null,
 	job_template_id bigint not null,
-	status text not null default 'pending' check (status in ('pending', 'initiated', 'ready', 'running', 'error', 'rollback')),
+	status text not null default 'pending' check (status in ('pending', 'initiated', 'ready', 'running', 'completed', 'error', 'rollback')),
 	modified timestamp default current_timestamp,
 	constraint job_pk primary key (id),
 	constraint job_parentid_fk foreign key (parent_id)
@@ -135,8 +138,8 @@ after insert on etl.batch
 create table etl.job_log (
 	id bigint not null default nextval('etl.joblog_id_seq'),
 	job_id bigint not null,
-	status_old text not null check (status_old in ('pending', 'initiated', 'ready', 'running', 'error', 'rollback')),
-	status_new text not null check (status_new in ('pending', 'initiated', 'ready', 'running', 'error', 'rollback')),
+	status_old text not null check (status_old in ('pending', 'initiated', 'ready', 'running', 'completed', 'error', 'rollback')),
+	status_new text not null check (status_new in ('pending', 'initiated', 'ready', 'running', 'completed', 'error', 'rollback')),
 	type text not null default 'info' check (type in ('info', 'debug', 'error')),
 	message text not null,
 	modified timestamp not null default current_timestamp,

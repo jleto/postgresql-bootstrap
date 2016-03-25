@@ -1,12 +1,12 @@
   <connection>
-    <name>opiniator_db</name>
-    <server>localhost</server>
+    <name>etl_db</name>
+    <server>&#x24;&#x7b;etl.db.host&#x7d;</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
-    <database>opiniator_dev</database>
+    <database>&#x24;&#x7b;etl.db.name&#x7d;</database>
     <port>5432</port>
-    <username>postgres</username>
-    <password>Encrypted 2be98afc843f79b8a9b50bd64d9a08ae9</password>
+    <username>&#x24;&#x7b;etl.db.user&#x7d;</username>
+    <password>&#x24;&#x7b;etl.db.password&#x7d;</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>

@@ -1,8 +1,0 @@
-﻿\i ./target/ddl/disconnect.sql
-\i ./target/ddl/disallowconn.sql
-\i ./target/ddl/drop.sql
-\i ./target/ddl/create.sql
-\i ./target/ddl/allowconn.sql
-\i ./target/ddl/sys.sql
-\i ./target/ddl/version.sql
-\i ./target/ddl/origin.sql
