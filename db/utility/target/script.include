@@ -1,0 +1,2 @@
+﻿\i ./target/ddl/utility.sql
+\i ./target/function/utility_function.sql

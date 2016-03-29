@@ -1,7 +1,7 @@
 import org.apache.tools.ant.filters.*
 
 def props = new Properties()
-file("config/common.properties").withInputStream { 
+file("config/utility.properties").withInputStream { 
     stream -> props.load(stream) 
 	} 
 
