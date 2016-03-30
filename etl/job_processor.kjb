@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2014&#x2f;07&#x2f;01 03&#x3a;41&#x3a;15.955</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2016&#x2f;03&#x2f;28 15&#x3a;09&#x3a;40.172</modified_date>
+  <modified_date>2016&#x2f;03&#x2f;29 20&#x3a;25&#x3a;44.907</modified_date>
     <parameters>
         <parameter>
             <name>p_config_file</name>
@@ -203,7 +203,7 @@
             <parameter>            <name>p_workflow_name</name>
             <stream_name/>
             <value>&#x24;&#x7b;v_workflow_name&#x7d;</value>
-            </parameter>      </parameters>      <parallel>N</parallel>
+            </parameter>      </parameters>      <parallel>Y</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>368</xloc>
@@ -228,7 +228,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
+      <xloc>672</xloc>
       <yloc>240</yloc>
       </entry>
     <entry>
@@ -291,7 +291,7 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>304</xloc>
+      <xloc>288</xloc>
       <yloc>336</yloc>
       </entry>
     <entry>
@@ -332,8 +332,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
-      <yloc>576</yloc>
+      <xloc>512</xloc>
+      <yloc>624</yloc>
       </entry>
     <entry>
       <name>Get Normal Log</name>
@@ -343,7 +343,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
+      <xloc>416</xloc>
       <yloc>576</yloc>
       </entry>
     <entry>
@@ -383,7 +383,7 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>480</xloc>
+      <xloc>432</xloc>
       <yloc>336</yloc>
       </entry>
     <entry>
@@ -396,8 +396,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
-      <yloc>880</yloc>
+      <xloc>416</xloc>
+      <yloc>752</yloc>
       </entry>
     <entry>
       <name>Get Job Log</name>
@@ -427,7 +427,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
+      <xloc>768</xloc>
       <yloc>240</yloc>
       </entry>
     <entry>
@@ -447,7 +447,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>480</xloc>
+      <xloc>432</xloc>
       <yloc>416</yloc>
       </entry>
     <entry>
@@ -467,7 +467,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>304</xloc>
+      <xloc>288</xloc>
       <yloc>416</yloc>
       </entry>
     <entry>
@@ -498,7 +498,7 @@
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>Y</parallel>
+      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>32</xloc>
@@ -532,7 +532,7 @@
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
+      </parameters>      <parallel>Y</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>160</xloc>
@@ -569,8 +569,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>144</yloc>
+      <xloc>672</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
       <name>Package Ready&#x3f;</name>
@@ -588,7 +588,7 @@
       <successnumbercondition>different</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
       <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
+      <parallel>Y</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>272</xloc>
@@ -614,7 +614,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>160</xloc>
-      <yloc>144</yloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
       <name>postgres-9.4</name>
@@ -635,7 +635,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
+      <xloc>768</xloc>
       <yloc>480</yloc>
       </entry>
     <entry>
@@ -657,7 +657,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
+      <xloc>768</xloc>
       <yloc>576</yloc>
       </entry>
     <entry>
@@ -679,7 +679,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
+      <xloc>768</xloc>
       <yloc>672</yloc>
       </entry>
     <entry>
@@ -701,7 +701,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
+      <xloc>768</xloc>
       <yloc>752</yloc>
       </entry>
     <entry>
@@ -733,7 +733,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
+      <xloc>896</xloc>
       <yloc>480</yloc>
       </entry>
     <entry>
@@ -765,7 +765,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
+      <xloc>896</xloc>
       <yloc>576</yloc>
       </entry>
     <entry>
@@ -797,7 +797,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
+      <xloc>896</xloc>
       <yloc>672</yloc>
       </entry>
     <entry>
@@ -829,7 +829,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
+      <xloc>896</xloc>
       <yloc>752</yloc>
       </entry>
     <entry>
@@ -869,28 +869,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
+      <xloc>768</xloc>
       <yloc>352</yloc>
-      </entry>
-    <entry>
-      <name>DUMMY</name>
-      <description/>
-      <type>SPECIAL</type>
-      <start>N</start>
-      <dummy>Y</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
-      <intervalSeconds>0</intervalSeconds>
-      <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
-      <minutes>0</minutes>
-      <weekDay>1</weekDay>
-      <DayOfMonth>1</DayOfMonth>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>160</xloc>
-      <yloc>480</yloc>
       </entry>
     <entry>
       <name>DUMMY 2</name>
@@ -929,7 +909,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1072</xloc>
+      <xloc>1184</xloc>
       <yloc>416</yloc>
       </entry>
     <entry>
@@ -949,7 +929,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1056</xloc>
+      <xloc>1168</xloc>
       <yloc>816</yloc>
       </entry>
     <entry>
@@ -969,11 +949,62 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>304</xloc>
+      <xloc>288</xloc>
       <yloc>816</yloc>
+      </entry>
+    <entry>
+      <name>DUMMY</name>
+      <description/>
+      <type>SPECIAL</type>
+      <start>N</start>
+      <dummy>Y</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>Y</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>160</xloc>
+      <yloc>480</yloc>
+      </entry>
+    <entry>
+      <name>Dependency&#x3f;</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname>&#x24;&#x7b;v_job_id&#x7d;</fieldname>
+      <variablename>&#x24;&#x7b;v_job_id&#x7d;</variablename>
+      <fieldtype>number</fieldtype>
+      <mask/>
+      <comparevalue>-2</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>equal</successcondition>
+      <successnumbercondition>different</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>576</xloc>
+      <yloc>240</yloc>
       </entry>
   </entries>
   <hops>
+    <hop>
+      <from>Write To Log</from>
+      <to>Generate Batches</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
     <hop>
       <from>START</from>
       <to>config_load</to>
@@ -982,15 +1013,6 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Workflow Var</from>
-      <to>Job Ready&#x3f;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>config_load</from>
@@ -1076,24 +1098,6 @@
     <hop>
       <from>Set Status Error</from>
       <to>Status Error</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Write To Log</from>
-      <to>Generate Batches</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Package Ready&#x3f;</from>
-      <to>Get Next Job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1254,24 +1258,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Generate Batches</from>
-      <to>DUMMY</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>DUMMY</from>
-      <to>Next Package</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>Package Ready&#x3f;</from>
       <to>DUMMY 2</to>
       <from_nr>0</from_nr>
@@ -1396,6 +1382,60 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Generate Batches</from>
+      <to>DUMMY</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY</from>
+      <to>Next Package</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Workflow Var</from>
+      <to>Dependency&#x3f;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Dependency&#x3f;</from>
+      <to>Job Ready&#x3f;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Package Ready&#x3f;</from>
+      <to>Get Next Job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Dependency&#x3f;</from>
+      <to>Release Package Lock</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

@@ -1,4 +1,47 @@
-﻿create or replace function etl.fn_generate_batch()
+﻿
+create or replace view etl.vw_dependent_path
+as
+	select etl_lock, array_agg(dependent_path) as path
+	from 
+	(
+		WITH RECURSIVE job_next(job_id, batch_id, status, job_template_id, parent_id, depth) AS (
+				SELECT jb.id,
+						jb.batch_id,
+						jb.status,
+						jb.job_template_id,
+						jb.parent_id,
+						0 as depth,
+						ARRAY[jb.job_template_id] as path,
+						false as cycle,
+						case when (jb.status <> 'pending' and jb.status <> 'completed') then true else false end as dependency
+				FROM etl.job jb
+				where jb.parent_id is null
+			  UNION
+				SELECT jb.id,
+				jb.batch_id,
+				jb.status,
+				jb.job_template_id,
+				jb.parent_id,
+				jn.depth + 1,
+				path || jb.job_template_id,
+				jb.job_template_id = ANY(path),
+				case when (jb.status <> 'pending' and jb.status <> 'completed') then true else false end as dependency
+				FROM etl.job jb
+				join job_next jn on jb.parent_id = jn.job_template_id
+		)
+		SELECT job_package.etl_lock, 
+			   unnest(path) as dependent_path
+		FROM job_next
+		inner join etl.job_template
+			on job_next.job_template_id = job_template.id
+		inner join etl.job_package
+			on job_template.job_package_id = job_package.id
+		and dependency
+	) job_tree
+	group by etl_lock;
+
+
+create or replace function etl.fn_generate_batch()
 returns void as $$
 declare r record;
 		batch_interval text;
@@ -40,8 +83,20 @@ exception when others then
 	
 end $$ language plpgsql;
 
-create or replace function etl.fn_next_job(strEtlLock text) returns table(batch_id bigint, batch_key text, status text, job_id bigint, job_template_id bigint, job_template_key text, job_template_properties json, connection_type_key text, connection_key text, connection_properties json) as
-$$
+create or replace function etl.fn_next_job(strEtlLock text) returns table(
+																			batch_id bigint,
+																			batch_key text,
+																			status text,
+																			job_id bigint,
+																			job_parent_id bigint,
+																			job_template_id bigint,
+																			job_template_key text,
+																			job_template_properties json,
+																			connection_type_key text,
+																			connection_key text,
+																			connection_properties json
+																		)
+as $$
 begin
     return query
 	WITH RECURSIVE job_next(job_id, batch_id, status, job_template_id, parent_id, depth) AS (
@@ -51,11 +106,11 @@ begin
 					jb.job_template_id,
 					jb.parent_id,
 					0 as depth,
-			ARRAY[jb.job_template_id] as path,
-			false as cycle
+					ARRAY[jb.job_template_id] as path,
+					false as cycle
 			FROM etl.job jb
 			where jb.status = 'pending'
-			and jb.parent_id is null
+				and jb.parent_id is null
 		  UNION
 			SELECT jb.id,
 			jb.batch_id,
@@ -73,6 +128,7 @@ begin
 			batch.key as batch_key,
 			job_next.status,
 			job_next.job_id,
+			job_next.parent_id,
 			job_next.job_template_id,
 			job_template.key as job_template_key,
 			job_template.properties as job_template_properties,
@@ -91,7 +147,7 @@ begin
 	inner join etl.job_package
 		on job_template.job_package_id = job_package.id
 	where job_package.etl_lock = strEtlLock
-	order by batch_id asc, depth desc, path asc
+	order by job_next.batch_id asc, job_next.depth desc, job_next.path asc
 	limit 1;
 end$$ language plpgsql;
 
@@ -115,6 +171,7 @@ FOR r IN
 			jn.batch_id,
 			jn.batch_key,
 			jn.status,
+			jn.job_parent_id,
 			jn.job_template_id,
 			jn.job_template_key,
 			jn.job_template_properties,
@@ -124,22 +181,41 @@ FOR r IN
 	FROM etl.fn_next_job(strEtlLock) jn
 	limit 1
 	loop
-		if (r.status = 'pending')
-		then 
-			update etl.job
-			set status = 'initiated'
-			where job.id = r.job_id;
-		end if;
-	end loop;
 
-	return query
-	select 	r.batch_key,
-			r.job_id,
-			r.job_template_key,
-			r.job_template_properties::text,
-			r.connection_type_key,
-			r.connection_key,
-			r.connection_properties::text;
+		if exists (
+			select r.job_parent_id = ANY(path)
+			from etl.vw_dependent_path
+			where etl_lock = strEtlLock
+		)
+		then
+			return query
+			select 	r.batch_key as batch_key,
+					-2::bigint as job_id,
+					r.job_template_key as job_template_key,
+					r.job_template_properties::text as job_template_properties,
+					r.connection_type_key as connection_type_key,
+					r.connection_key as connection_key,
+					r.connection_properties::text as connection_properties;
+		else 
+			if (r.status = 'pending')
+			then 
+				update etl.job
+				set status = 'initiated'
+				where job.id = r.job_id;
+			end if;
+			
+			return query
+			select 	r.batch_key,
+					r.job_id,
+					r.job_template_key,
+					r.job_template_properties::text,
+					r.connection_type_key,
+					r.connection_key,
+					r.connection_properties::text;
+		end if;
+
+	end loop;
+			
 end$$ language plpgsql;
 
 create or replace function etl.fn_package_lock() returns table (job_package_id bigint, etl_lock text) as 
@@ -189,7 +265,7 @@ begin
 	loop
 
 		update etl.job_package
-		set etl_lock = _utility.random_string(32)
+		set etl_lock = utility.random_string(32)
 		where job_package.id = r.job_package_id;
 		
 		return query
