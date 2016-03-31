@@ -303,3 +303,22 @@ begin
 
 	return false;
 end $$ language plpgsql;
+
+create or replace function etl.job_batch_expire() returns void
+as $$
+begin
+
+	update etl.job u_job
+	set status = 'expired'
+	from etl.job
+	inner join etl.batch
+	on job.batch_id = batch.id
+	inner join etl.job_template
+		on job.job_template_id = job_template.id
+	inner join etl.job_package
+		on job_template.job_package_id = job_package.id
+	where job.status = 'pending'
+	and job.id = u_job.id
+	and batch.key < to_char(current_timestamp, (job_package.batch_format)::text);
+	
+end $$ language plpgsql;

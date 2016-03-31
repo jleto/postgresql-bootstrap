@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2014&#x2f;07&#x2f;01 03&#x3a;41&#x3a;15.955</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2016&#x2f;03&#x2f;29 20&#x3a;25&#x3a;44.907</modified_date>
+  <modified_date>2016&#x2f;03&#x2f;31 13&#x3a;25&#x3a;58.913</modified_date>
     <parameters>
         <parameter>
             <name>p_config_file</name>
@@ -117,20 +117,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>32</xloc>
-      <yloc>144</yloc>
-      </entry>
-    <entry>
-      <name>Write To Log</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>etl&#x3a; &#x24;&#x7b;etl.db.host&#x7d;, etl host&#x3a; &#x24;&#x7b;etl.db.host&#x7d;</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject>job.import variables</logsubject>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>32</xloc>
-      <yloc>368</yloc>
+      <yloc>304</yloc>
       </entry>
     <entry>
       <name>Set ETL Db</name>
@@ -170,7 +157,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>32</xloc>
-      <yloc>256</yloc>
+      <yloc>400</yloc>
       </entry>
     <entry>
       <name>Get Next Job</name>
@@ -206,8 +193,8 @@
             </parameter>      </parameters>      <parallel>Y</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>240</yloc>
+      <xloc>448</xloc>
+      <yloc>352</yloc>
       </entry>
     <entry>
       <name>Job Ready&#x3f;</name>
@@ -228,8 +215,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>240</yloc>
+      <xloc>752</xloc>
+      <yloc>352</yloc>
       </entry>
     <entry>
       <name>No Job Ready</name>
@@ -238,8 +225,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1152</xloc>
-      <yloc>32</yloc>
+      <xloc>1232</xloc>
+      <yloc>144</yloc>
       </entry>
     <entry>
       <name>Workflow Var</name>
@@ -251,8 +238,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>464</xloc>
-      <yloc>240</yloc>
+      <xloc>560</xloc>
+      <yloc>288</yloc>
       </entry>
     <entry>
       <name>Status Error</name>
@@ -291,8 +278,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>336</yloc>
+      <xloc>368</xloc>
+      <yloc>496</yloc>
       </entry>
     <entry>
       <name>Mail - Failed</name>
@@ -332,8 +319,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
-      <yloc>624</yloc>
+      <xloc>592</xloc>
+      <yloc>784</yloc>
       </entry>
     <entry>
       <name>Get Normal Log</name>
@@ -343,8 +330,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>576</yloc>
+      <xloc>496</xloc>
+      <yloc>736</yloc>
       </entry>
     <entry>
       <name>Status Complete</name>
@@ -383,8 +370,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>432</xloc>
-      <yloc>336</yloc>
+      <xloc>512</xloc>
+      <yloc>496</yloc>
       </entry>
     <entry>
       <name>Invalid Job</name>
@@ -396,8 +383,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>752</yloc>
+      <xloc>496</xloc>
+      <yloc>912</yloc>
       </entry>
     <entry>
       <name>Get Job Log</name>
@@ -407,8 +394,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>672</yloc>
+      <xloc>480</xloc>
+      <yloc>832</yloc>
       </entry>
     <entry>
       <name>Set Status Running</name>
@@ -427,8 +414,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
-      <yloc>240</yloc>
+      <xloc>848</xloc>
+      <yloc>352</yloc>
       </entry>
     <entry>
       <name>Set Status Complete</name>
@@ -447,8 +434,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>432</xloc>
-      <yloc>416</yloc>
+      <xloc>512</xloc>
+      <yloc>576</yloc>
       </entry>
     <entry>
       <name>Set Status Error</name>
@@ -467,8 +454,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>416</yloc>
+      <xloc>368</xloc>
+      <yloc>576</yloc>
       </entry>
     <entry>
       <name>Generate Batches</name>
@@ -498,11 +485,11 @@
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
+      </parameters>      <parallel>Y</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>32</xloc>
-      <yloc>480</yloc>
+      <xloc>240</xloc>
+      <yloc>512</yloc>
       </entry>
     <entry>
       <name>Next Package</name>
@@ -535,8 +522,8 @@
       </parameters>      <parallel>Y</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
-      <yloc>240</yloc>
+      <xloc>240</xloc>
+      <yloc>352</yloc>
       </entry>
     <entry>
       <name>Release Package Lock</name>
@@ -569,8 +556,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>96</yloc>
+      <xloc>752</xloc>
+      <yloc>208</yloc>
       </entry>
     <entry>
       <name>Package Ready&#x3f;</name>
@@ -591,8 +578,8 @@
       <parallel>Y</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>272</xloc>
-      <yloc>240</yloc>
+      <xloc>352</xloc>
+      <yloc>352</yloc>
       </entry>
     <entry>
       <name>Package Lock Released&#x3f;</name>
@@ -613,8 +600,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
-      <yloc>96</yloc>
+      <xloc>240</xloc>
+      <yloc>208</yloc>
       </entry>
     <entry>
       <name>postgres-9.4</name>
@@ -635,8 +622,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
-      <yloc>480</yloc>
+      <xloc>848</xloc>
+      <yloc>640</yloc>
       </entry>
     <entry>
       <name>openstack-3.0</name>
@@ -657,8 +644,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
-      <yloc>576</yloc>
+      <xloc>848</xloc>
+      <yloc>736</yloc>
       </entry>
     <entry>
       <name>vmware-vsphere-4.0</name>
@@ -679,8 +666,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
-      <yloc>672</yloc>
+      <xloc>848</xloc>
+      <yloc>832</yloc>
       </entry>
     <entry>
       <name>aws-ec2-2015-10-01</name>
@@ -701,8 +688,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
-      <yloc>752</yloc>
+      <xloc>848</xloc>
+      <yloc>912</yloc>
       </entry>
     <entry>
       <name>postgres-9.4 job</name>
@@ -733,8 +720,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
-      <yloc>480</yloc>
+      <xloc>976</xloc>
+      <yloc>640</yloc>
       </entry>
     <entry>
       <name>openstack job</name>
@@ -765,8 +752,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
-      <yloc>576</yloc>
+      <xloc>976</xloc>
+      <yloc>736</yloc>
       </entry>
     <entry>
       <name>vmware-vsphere job</name>
@@ -797,8 +784,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
-      <yloc>672</yloc>
+      <xloc>976</xloc>
+      <yloc>832</yloc>
       </entry>
     <entry>
       <name>aws-ec2 job</name>
@@ -829,8 +816,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
-      <yloc>752</yloc>
+      <xloc>976</xloc>
+      <yloc>912</yloc>
       </entry>
     <entry>
       <name>Status Running</name>
@@ -869,8 +856,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
-      <yloc>352</yloc>
+      <xloc>848</xloc>
+      <yloc>512</yloc>
       </entry>
     <entry>
       <name>DUMMY 2</name>
@@ -889,8 +876,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>272</xloc>
-      <yloc>32</yloc>
+      <xloc>352</xloc>
+      <yloc>144</yloc>
       </entry>
     <entry>
       <name>DUMMY 3</name>
@@ -909,8 +896,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1184</xloc>
-      <yloc>416</yloc>
+      <xloc>1264</xloc>
+      <yloc>576</yloc>
       </entry>
     <entry>
       <name>DUMMY 4</name>
@@ -929,8 +916,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1168</xloc>
-      <yloc>816</yloc>
+      <xloc>1248</xloc>
+      <yloc>976</yloc>
       </entry>
     <entry>
       <name>DUMMY 5</name>
@@ -949,28 +936,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>816</yloc>
-      </entry>
-    <entry>
-      <name>DUMMY</name>
-      <description/>
-      <type>SPECIAL</type>
-      <start>N</start>
-      <dummy>Y</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
-      <intervalSeconds>0</intervalSeconds>
-      <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
-      <minutes>0</minutes>
-      <weekDay>1</weekDay>
-      <DayOfMonth>1</DayOfMonth>
-      <parallel>Y</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>160</xloc>
-      <yloc>480</yloc>
+      <xloc>368</xloc>
+      <yloc>976</yloc>
       </entry>
     <entry>
       <name>Dependency&#x3f;</name>
@@ -991,20 +958,251 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>576</xloc>
-      <yloc>240</yloc>
+      <xloc>656</xloc>
+      <yloc>352</yloc>
+      </entry>
+    <entry>
+      <name>workflow_job_expire</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>workflow_job_expire</transname>
+      <directory>&#x2f;workflow</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>32</xloc>
+      <yloc>512</yloc>
+      </entry>
+    <entry>
+      <name>Log ETL Error</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage/>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>144</xloc>
+      <yloc>64</yloc>
+      </entry>
+    <entry>
+      <name>DUMMY</name>
+      <description/>
+      <type>SPECIAL</type>
+      <start>N</start>
+      <dummy>Y</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>144</xloc>
+      <yloc>432</yloc>
+      </entry>
+    <entry>
+      <name>DUMMY 6</name>
+      <description/>
+      <type>SPECIAL</type>
+      <start>N</start>
+      <dummy>Y</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>768</xloc>
+      <yloc>432</yloc>
+      </entry>
+    <entry>
+      <name>DUMMY 7</name>
+      <description/>
+      <type>SPECIAL</type>
+      <start>N</start>
+      <dummy>Y</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>448</xloc>
+      <yloc>432</yloc>
+      </entry>
+    <entry>
+      <name>Job Error</name>
+      <description/>
+      <type>ABORT</type>
+      <message/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1232</xloc>
+      <yloc>64</yloc>
+      </entry>
+    <entry>
+      <name>Mail Error</name>
+      <description/>
+      <type>MAIL</type>
+      <server>&#x24;&#x7b;mail.smtp.server&#x7d;</server>
+      <port>&#x24;&#x7b;mail.smtp.port&#x7d;</port>
+      <destination>&#x24;&#x7b;mail.success.email_address&#x7d;</destination>
+      <destinationCc>&#x24;&#x7b;mail.manager.email_address&#x7d;</destinationCc>
+      <destinationBCc/>
+      <replyto>&#x24;&#x7b;mail.sender.email_address&#x7d;</replyto>
+      <replytoname>&#x24;&#x7b;mail.sender.name&#x7d;</replytoname>
+      <subject>&#x24;&#x7b;mail.success.subject&#x7d;</subject>
+      <include_date>N</include_date>
+      <contact_person>&#x24;&#x7b;mail.engineer.name&#x7d;</contact_person>
+      <contact_phone>&#x24;&#x7b;mail.engineer.phone&#x7d;</contact_phone>
+      <comment>This is a custom message.</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>Y</use_auth>
+      <use_secure_auth>Y</use_secure_auth>
+      <auth_user>&#x24;&#x7b;mail.smtp.user&#x7d;</auth_user>
+      <auth_password>&#x24;&#x7b;mail.smtp.password&#x7d;</auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <sensitivity>normal</sensitivity>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses>&#x24;&#x7b;mail.sender.email_address&#x7d;</replyToAddresses>
+      <filetypes>      </filetypes>      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>64</yloc>
+      </entry>
+    <entry>
+      <name>Get Job Error Log</name>
+      <description/>
+      <type>EVAL</type>
+      <script>var logText &#x3d; previous_result.getLogText&#x28;&#x29;&#x3b;&#xa;parent_job.setVariable&#x28;&#x22;LOG_TEXT&#x22;, logText&#x29;&#x3b;&#xa;&#xa;true&#x3b;</script>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>272</xloc>
+      <yloc>0</yloc>
+      </entry>
+    <entry>
+      <name>DUMMY 8</name>
+      <description/>
+      <type>SPECIAL</type>
+      <start>N</start>
+      <dummy>Y</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>272</xloc>
+      <yloc>80</yloc>
+      </entry>
+    <entry>
+      <name>Mail Success</name>
+      <description/>
+      <type>MAIL</type>
+      <server>&#x24;&#x7b;mail.smtp.server&#x7d;</server>
+      <port>&#x24;&#x7b;mail.smtp.port&#x7d;</port>
+      <destination>&#x24;&#x7b;mail.engineer.email_address&#x7d;</destination>
+      <destinationCc>&#x24;&#x7b;mail.manager.email_address&#x7d;</destinationCc>
+      <destinationBCc/>
+      <replyto>&#x24;&#x7b;mail.sender.email_address&#x7d;</replyto>
+      <replytoname>&#x24;&#x7b;mail.sender.name&#x7d;</replytoname>
+      <subject>&#x24;&#x7b;mail.success.subject&#x7d;</subject>
+      <include_date>N</include_date>
+      <contact_person>&#x24;&#x7b;mail.engineer.name&#x7d;</contact_person>
+      <contact_phone>&#x24;&#x7b;mail.engineer.phone&#x7d;</contact_phone>
+      <comment>This is a custom message.</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>Y</use_auth>
+      <use_secure_auth>Y</use_secure_auth>
+      <auth_user>&#x24;&#x7b;mail.smtp.user&#x7d;</auth_user>
+      <auth_password>&#x24;&#x7b;mail.smtp.password&#x7d;</auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <sensitivity>normal</sensitivity>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses>&#x24;&#x7b;mail.sender.email_address&#x7d;</replyToAddresses>
+      <filetypes>      </filetypes>      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>144</yloc>
+      </entry>
+    <entry>
+      <name>Get Job Success Log</name>
+      <description/>
+      <type>EVAL</type>
+      <script>var logText &#x3d; previous_result.getLogText&#x28;&#x29;&#x3b;&#xa;parent_job.setVariable&#x28;&#x22;LOG_TEXT&#x22;, logText&#x29;&#x3b;&#xa;&#xa;true&#x3b;</script>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>464</xloc>
+      <yloc>144</yloc>
       </entry>
   </entries>
   <hops>
-    <hop>
-      <from>Write To Log</from>
-      <to>Generate Batches</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>START</from>
       <to>config_load</to>
@@ -1150,20 +1348,11 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Set ETL Db</from>
-      <to>Write To Log</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>postgres-9.4</from>
       <to>postgres-9.4 job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1181,7 +1370,7 @@
       <to>openstack job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1199,7 +1388,7 @@
       <to>vmware-vsphere job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1217,7 +1406,7 @@
       <to>aws-ec2 job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1274,15 +1463,6 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>DUMMY 2</from>
-      <to>No Job Ready</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>aws-ec2 job</from>
@@ -1384,24 +1564,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Generate Batches</from>
-      <to>DUMMY</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>DUMMY</from>
-      <to>Next Package</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>Workflow Var</from>
       <to>Dependency&#x3f;</to>
       <from_nr>0</from_nr>
@@ -1437,13 +1599,286 @@
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
+    <hop>
+      <from>Generate Batches</from>
+      <to>Next Package</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>openstack-3.0</from>
+      <to>DUMMY 3</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>vmware-vsphere-4.0</from>
+      <to>DUMMY 3</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>aws-ec2-2015-10-01</from>
+      <to>DUMMY 3</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>postgres-9.4</from>
+      <to>DUMMY 3</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>workflow_job_expire</from>
+      <to>Generate Batches</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Status Running</from>
+      <to>DUMMY 6</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Status Complete</from>
+      <to>DUMMY 7</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Status Error</from>
+      <to>DUMMY 7</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY 6</from>
+      <to>DUMMY 7</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY 7</from>
+      <to>DUMMY</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Get Next Job</from>
+      <to>DUMMY 7</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Next Package</from>
+      <to>DUMMY</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>workflow_job_expire</from>
+      <to>DUMMY</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Generate Batches</from>
+      <to>DUMMY</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY</from>
+      <to>Log ETL Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Log ETL Error</from>
+      <to>Get Job Error Log</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Get Job Error Log</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Mail Error</from>
+      <to>Job Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Log ETL Error</from>
+      <to>DUMMY 8</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Get Job Error Log</from>
+      <to>DUMMY 8</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY 8</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY 2</from>
+      <to>Get Job Success Log</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Get Job Success Log</from>
+      <to>Mail Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Mail Success</from>
+      <to>No Job Ready</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>config_load</from>
+      <to>DUMMY</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set ETL Db</from>
+      <to>workflow_job_expire</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set ETL Db</from>
+      <to>DUMMY</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
   </hops>
   <notepads>
     <notepad>
-      <note>ETL Process Completes when Next Job is Not Ready</note>
-      <xloc>1056</xloc>
-      <yloc>96</yloc>
-      <width>319</width>
+      <note>Success when No Jobs to Process</note>
+      <xloc>976</xloc>
+      <yloc>112</yloc>
+      <width>213</width>
+      <heigth>25</heigth>
+      <fontname>Arial</fontname>
+      <fontsize>10</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>ETL Error </note>
+      <xloc>1120</xloc>
+      <yloc>32</yloc>
+      <width>69</width>
       <heigth>25</heigth>
       <fontname>Arial</fontname>
       <fontsize>10</fontsize>
